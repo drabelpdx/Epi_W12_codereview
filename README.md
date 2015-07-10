@@ -8,6 +8,10 @@ David Abel
 
 Portfolio is a class project to create a profile of projects that demonstrates the skills I have learned at Epicodus.
 
+### Heroku Link ###
+
+https://afternoon-island-8081.herokuapp.com
+
 ### Setup ###
 
 clone to your Desktop
@@ -23,6 +27,9 @@ to load
     $rails s
 
 Go to "www.localhost/3000"
+
+You may sign on as either a User or Admin at this time.
+Of course the Admin will be tucked away at a later deployment.
 
 
 ### Debugging ###
