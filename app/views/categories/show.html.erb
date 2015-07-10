@@ -1,0 +1,16 @@
+<% content_for(:title, "Category | Show") %>
+
+<%= link_to 'Edit category', edit_category_path, :class => "btn btn-success" %>  |
+<%= link_to 'Delete', category_path(@category), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
+<hr>
+
+<h3><%=@category.name %></h3>
+<h4>Experience: <%=@category.description%></h4>
+<br>
+<hr>
+<%= link_to 'Add a Project', new_category_project_path(@category.id), :class => "btn btn-primary" %>
+<br><br>
+<h4>Projects in <%=@category.name %>:</h4>
+<% @category.projects.each do |project| %>
+  <li><%= link_to project.name, category_project_path(@category, project) %></li>
+<%end%>
