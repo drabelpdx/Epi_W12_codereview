@@ -1,17 +1,19 @@
-<% content_for(:title, "Post | Show") %>
+<% content_for(:title, "Post | Comment") %>
 
-<%= link_to 'Edit post', edit_post_path, :class => "btn btn-success" %>  |
-<%= link_to 'Delete', post_path(@post), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
-<hr>
+<% if current_admin %>
+  <%= link_to 'Edit post', edit_post_path, :class => "btn btn-success" %>  |
+  <%= link_to 'Delete', post_path(@post), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
+  <hr>
+<% end %>
 
 <h3><%=@post.title %></h3>
-<h4>Experience: <%=@post.body%></h4>
+<h4><%=@post.body%></h4>
 <br>
 <hr>
-<%= link_to 'Add a Comment', new_post_comment_path(@post.id), :class => "btn btn-primary" %>
-<br><br>
-<h4>Comments on <%= @post.title %>:</h4>
-
+<% if current_user %>
+  <%= link_to 'Add a Comment', new_post_comment_path(@post.id), :class => "btn btn-primary" %>
+  <br><br>
+<% end %>
 <ul>
    <% @post.comments.each do |comment| %>
      <li><%= comment.comment %> -- <small><%= comment.user.email %></small>

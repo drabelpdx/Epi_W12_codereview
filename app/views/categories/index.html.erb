@@ -2,18 +2,21 @@
 
 <h3>About Me</h2>
   <p>I am an eLearning Developer and Student at <a href="http://www.Epicodus.com" target="blank">Epicodus</a>.</p>
+  <p>Read my: <%= link_to 'Blog', posts_path %>
+
   <p>drabelpdx@gmail.com<br>
+
   <%= link_to 'GitHub', "https://github.com/drabelpdx", :target => 'blank' %><br>
   <%= link_to 'linkedin', "https://www.linkedin.com/in/drabelpdx", :target => 'blank' %></p>
-
 <hr>
+<% if current_admin %>
+  <%= link_to 'Add a Category', new_category_path, :class => "btn btn-success" %>
+<% end %>
+
 <h3>Code Skills by Category</h3>
 
 <p>You can check out some of the projects I've been working on below. Click on a category to see all the projects for that code skill. </p>
-<br>
-<%= link_to 'Add a Category', new_category_path, :class => "btn btn-success" %>
-<br>
-<br>
+
 <ul>
   <% @categories.each do |category| %>
     <li><%= link_to category.name, category_path(category.id) %></li>

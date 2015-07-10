@@ -1,8 +1,11 @@
 <% content_for(:title, "Project | Show") %>
 
-<%= link_to 'Edit project', edit_category_project_path, :class => "btn btn-success" %>  |
-<%= link_to 'Delete', category_project_path(@category, @project), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
-<hr>
+<% if current_admin %>
+  <%= link_to 'Edit project', edit_category_project_path, :class => "btn btn-success" %>  |
+  <%= link_to 'Delete', category_project_path(@category, @project), :class => "btn btn-danger", :data => {:confirm => "You sure?", :method => "delete"} %>
+  <hr>
+<% end %>
+
 <h3><%=@project.name %></h3>
 <br>
 <h4>Description: <%=@project.description%></h4>

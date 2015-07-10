@@ -1,12 +1,14 @@
-<% content_for(:title, "Portfolio | Blog") %>
+<% content_for(:title, "Blog | Post") %>
+
+<% if current_admin %>
+  <%= link_to 'Add a Post', new_post_path, :class => "btn btn-success" %>
+  <br>
+<% end %>
 
 <h3>Code Blog</h3>
 
 <p>You can check out some of the projects I've been working on below. Click on a category to see all the projects for that code skill. </p>
-<br>
-<%= link_to 'Add a Post', new_post_path, :class => "btn btn-success" %>
-<br>
-<br>
+
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, post_path(post.id) %></li>
