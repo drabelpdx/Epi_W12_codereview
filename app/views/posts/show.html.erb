@@ -11,3 +11,11 @@
 <%= link_to 'Add a Comment', new_post_comment_path(@post.id), :class => "btn btn-primary" %>
 <br><br>
 <h4>Comments on <%= @post.title %>:</h4>
+
+<ul>
+   <% @post.comments.each do |comment| %>
+     <li><%= comment.comment %> -- <small><%= comment.user.email %></small>
+     </li>
+     <hr>
+   <% end %>
+ </ul>
