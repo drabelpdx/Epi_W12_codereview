@@ -28,9 +28,10 @@ to load
 
 Go to "www.localhost/3000"
 
+### Sign in ###
+
 You may sign on as either a User or Admin at this time.
 Of course the Admin will be tucked away at a later deployment.
-
 
 ### Debugging ###
 
