@@ -1,0 +1,15 @@
+<%= render "layouts/errors", :object => @post%>
+
+<%= form_for @post do |f| %>
+  <div class="field">
+    <%= f.text_field :title %><br>
+    <%= f.label :title %>
+  </div>
+  <div class="field">
+    <%= f.text_field :body %><br>
+    <%= f.label :body %>
+  </div><br>
+  <div class="actions">
+   <%= f.submit %>
+  </div>
+<% end %>

@@ -4,7 +4,7 @@
 
   <title><%= yield(:title) %></title>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -16,6 +16,8 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
+        <li><%= link_to 'Blog', posts_path %></li>
+
         <% categories.each do |category| %>
           <li><%= link_to category.name, category_path(category.id) %></li>
         <% end %>
