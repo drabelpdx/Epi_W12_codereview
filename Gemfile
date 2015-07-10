@@ -9,6 +9,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
+gem 'rails_12factor'
 
 group :development do
   gem 'byebug'
@@ -28,3 +29,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
 end
+
+ruby "2.2.0"
