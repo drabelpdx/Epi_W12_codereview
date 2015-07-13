@@ -1,0 +1,4 @@
+$('#new_post').remove();
+$('#new_post_link').show();
+// $('#posts').append('<%= j render(@post) %>');
+$('#posts').append('<%= j render(partial: 'post', locals: {post: @post}) %>');

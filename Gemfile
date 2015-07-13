@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
 gem 'rails_12factor'
+gem 'rails_admin'
 
 group :development do
   gem 'byebug'

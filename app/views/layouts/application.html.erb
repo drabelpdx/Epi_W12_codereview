@@ -35,6 +35,7 @@
         <% end %>
         <% if current_admin %>
           <li><%= link_to "Logged in as: #{current_admin.email}", '/' %></li>
+          <li><%= link_to "Console", 'admin_console_path' %></li>
           <li><%= link_to '', destroy_admin_session_path, method: :delete, class: "glyphicon glyphicon-log-out", title: "Sign Out" %></li>
           <li><%= link_to '', edit_admin_registration_path, class: "glyphicon glyphicon-edit", title: "Edit Profile" %></li>
         <% end %>

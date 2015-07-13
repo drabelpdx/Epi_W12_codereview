@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin_console', as: 'rails_admin'
   devise_for :admins
   devise_for :users
 
@@ -11,5 +12,5 @@ Rails.application.routes.draw do
     resources :posts do
       resources :comments
     end
-    
+
 end

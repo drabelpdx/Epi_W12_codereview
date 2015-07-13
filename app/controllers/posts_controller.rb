@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   def new
@@ -10,13 +11,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      flash[:notice] = "Post posted."
-      redirect_to posts_path
-    else
-      flash[:alert] = "Sorry, try again."
-      render :new
+    @post = Post.create!(post_params)
+    respond_to do |format|
+      format.html { redirect_to posts_path }
+      format.js
+    # if @post.save
+    #   flash[:notice] = "Post posted."
+    #   redirect_to posts_path
+    # else
+    #   flash[:alert] = "Sorry, try again."
+    #   render :new
     end
   end
 

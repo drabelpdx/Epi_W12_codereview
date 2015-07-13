@@ -11,13 +11,14 @@
 <br>
 <hr>
 <% if current_user %>
-  <%= link_to 'Add a Comment', new_post_comment_path(@post.id), :class => "btn btn-primary" %>
+  <%= link_to 'Add a Comment', new_post_comment_path(@post.id), id: "new_comment_link", remote: true, :class => "btn btn-primary" %>
   <br><br>
 <% end %>
-<ul>
+<ul id='comments'>
    <% @post.comments.each do |comment| %>
-     <li><%= comment.comment %> -- <small><%= comment.user.email %></small>
-     </li>
+
+   <!-- comment still not displaying id to delete -->
+     <li> <%= comment.comment %> <%= link_to "(remove)", @comment, method: :delete, data: {confirm: "Are you sure?"} %> -- <small><%= comment.user.email %></small></li>
      <hr>
    <% end %>
  </ul>
