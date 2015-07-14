@@ -13,22 +13,17 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to post_path(@post) }
       format.js
-    # if @comment.save
-    #   current_user.comments.push(@comment)
-    #   flash[:notice] = "Your comment has been posted."
-    #   redirect_to post_path(@post)
-    # else
-    #   render :new
     end
   end
 
   def destroy
-    @task = Task.destroy(params[:id])
-    respond_to do |format|
-      format.html { redirect_to post_path(@post) }
-      format.js
-    end
+  @comment = Comment.find(params[:id])
+  @comment.destroy
+  respond_to do |format|
+    format.html { redirect_to post_path(@post) }
+    format.js
   end
+end
 
   private
 

@@ -15,17 +15,12 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_path }
       format.js
-    # if @post.save
-    #   flash[:notice] = "Post posted."
-    #   redirect_to posts_path
-    # else
-    #   flash[:alert] = "Sorry, try again."
-    #   render :new
     end
   end
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit

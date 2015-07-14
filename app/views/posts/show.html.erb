@@ -14,11 +14,7 @@
   <%= link_to 'Add a Comment', new_post_comment_path(@post.id), id: "new_comment_link", remote: true, :class => "btn btn-primary" %>
   <br><br>
 <% end %>
-<ul id='comments'>
-   <% @post.comments.each do |comment| %>
-
-   <!-- comment still not displaying id to delete -->
-     <li> <%= comment.comment %> <%= link_to "(remove)", @comment, method: :delete, data: {confirm: "Are you sure?"} %> -- <small><%= comment.user.email %></small></li>
-     <hr>
-   <% end %>
- </ul>
+<h3>Comments</h3>
+<div class="comments" id="comments">
+<%= render @post.comments %>
+</div>
